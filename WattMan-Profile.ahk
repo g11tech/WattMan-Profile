@@ -13,7 +13,7 @@
 
 ; Defaults
 profile := "%userprofile%\AppData\Local\AMD\CN\WattmanProfiles\WattMann-profile.xml"
-exe := "C:\Program Files\AMD\CNext\CNext\RadeonSettings.exe"
+exe := "C:\Program Files\AMD\CNext\CNext\RadeonSoftware.exe"
 delay := 200
 endDelay := 1000
 
@@ -40,17 +40,15 @@ If not hWnd
 
 
 ; Accessible path-codes from AccViewer
-Acc_TryAction("4.1.22.1.1.1", Acc_ObjectFromWindow(hWnd, 0), "Games")  ; Click, 50 50
+Acc_TryAction("4.11", Acc_ObjectFromWindow(hWnd, 0), "Performance")  ; Click, 50 50
 Sleep, delay
-Acc_TryAction("4.1.1.5.1",,"Global Settings")  ; Click, 50 100
+Acc_TryAction("4.1.1.2.2",,"Tuning")  ; Click, 50 100
 Sleep, delay*2
-Acc_TryAction("4.1.3.1.1.2",, "WattMan Global")  ; Click, 500 100
+Acc_TryAction("4.1.1.1.1.3",, "GPU 1")  ; Click, 500 100
 Sleep, delay
-Acc_TryAction("4.1.3.6",, "Reset Profile (fix stuck settings)")  ; Click, 950 125
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
 Sleep, delay
-Acc_TryAction("4.1.3.8.3",, "Confirm reset")  ; Click, 675 300
-Sleep, delay
-Acc_TryAction("4.1.3.4",, "Load Profile")  ; Click, 750 125
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
 
 ; Open file dialog
 WinWait, ahk_class #32770,, 2
@@ -62,9 +60,133 @@ if not errorlevel {
 	ControlClick, Button1
 	WinWaitClose
 	Sleep, endDelay
-	WinClose, ahk_id %hWnd%
+}
+
+
+Acc_TryAction("4.1.1.1.1.4",, "GPU 2")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
 	Sleep, delay
-	WinClose, ahk_class Qt5QWindowPopupDropShadowSaveBitsOwnDC  ; Close bugged temp tooltip
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.5",, "GPU 3")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.6",, "GPU 4")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.7",, "GPU 5")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.8",, "GPU 6")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.9",, "GPU 7")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
+}
+
+Acc_TryAction("4.1.1.1.1.10",, "GPU 8")  ; Click, 500 100
+Sleep, delay
+Acc_TryAction("4.1.1.2.5",, "Menu")  ; Click, 500 500
+Sleep, delay
+Acc_TryAction("4.19.1",, "Load Profile")  ; Click, 750 125
+
+; Open file dialog
+WinWait, ahk_class #32770,, 2
+if not errorlevel {
+	Sleep, delay
+	SetControlDelay -1
+	ControlSetText, Edit1, %profile%
+	Sleep, delay
+	ControlClick, Button1
+	WinWaitClose
+	Sleep, endDelay
 }
 
 ; See Acc_DoAction
